@@ -31,6 +31,11 @@ services:
     hostname: server
     stdin_open: true
     tty: true
+    labels:
+      - com.docker-tc.enabled=1
+      - com.docker-tc.delay=250ms 21ms
+      - com.docker-tc.loss=3%
+      - com.docker-tc.
     volumes:
       - $WWW:/www:ro
       - $CERTS:/certs:ro

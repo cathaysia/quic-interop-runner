@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
 import argparse
+import subprocess
+import os
 import sys
 from typing import List, Tuple
 
@@ -26,6 +28,8 @@ server_implementations = [
 
 
 def main():
+    os.system("cd tc && docker compose up -d")
+
     def get_args():
         parser = argparse.ArgumentParser()
         parser.add_argument(

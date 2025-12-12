@@ -133,6 +133,7 @@ class InteropRunner:
         output = subprocess.run(
             cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT
         )
+
         if not self._is_unsupported(output.stdout.splitlines()):
             logging.error("%s client not compliant.", name)
             logging.debug("%s", output.stdout.decode("utf-8", errors="replace"))
